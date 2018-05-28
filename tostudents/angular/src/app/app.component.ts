@@ -14,6 +14,7 @@ export class AppComponent {
     username: '',
     password: ''
   };
+  myFriends;
 
   constructor(private authService: AuthService) {
     //this.activeUser = this.authService._user ? this.authService._user.name : 'N/A';
@@ -22,7 +23,6 @@ export class AppComponent {
     // login user using authService.
     //console.log(this.credentials);
     this.authService.login(this.credentials).subscribe(() => {
-      this.credentialsFail = false;
       console.log('component: ', this.credentials);
     }, (error) => {
       this.credentialsFail = true;
@@ -35,10 +35,20 @@ export class AppComponent {
 
   logout() {
     this.authService.logout();
+    this.myFriends = null;
     // logout user using authService.
   }
 
   testApi() {
+    this.authService.getResource('/friends').subscribe((res: any) => {
+      this.myFriends = res;
+      console.log(this.myFriends);
+
+    }, (err) => {
+      console.error('Got error back', err);
+    });
+    console.log('got friends', this.myFriends);
+    return this.myFriends;
     // test API access by invoking getResource on authService.
   }
 }

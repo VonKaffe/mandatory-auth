@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+mport { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -6,18 +6,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { AuthInterceptor } from './auth-interceptor';
 import { AppComponent } from './app.component';
-import { FriendsComponent } from './friends/friends.component';
+//import { FriendsComponent } from './friends/friends.component';
 import {Router, RouterModule, Routes} from '@angular/router';
 
 const appRoutes = [
   {path:'', component: AppComponent},
-  {path:'friends', component: FriendsComponent}
+  {path:'friends', component: AppComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    FriendsComponent
+    //FriendsComponent
   ],
   imports: [
     BrowserModule,

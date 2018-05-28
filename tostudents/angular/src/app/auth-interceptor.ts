@@ -10,7 +10,7 @@ const username  = 'me@test.com';
 const password  = 'password';
 
 // list of friends to return when the route /api/friends is invoked.
-const friends   = [{name: 'Kejsaren', myDesc: 'I can\'t live without him', pic: '../assets/images/Kejsare.jpg'}, {name: 'Sultan', myDesc: 'My first true bromance, love at first sight', pic: '../assets/images/Sultan.png'}, {name: 'Kejsarinnan', myDesc: 'My true master, I do as she says', pic: '../assets/images/Empress.jpg'}];
+const friends   = [{name: 'Vault', myDesc: 'The King', pic: '../images/fall.png'}, {name: 'Vault Boy', myDesc: 'The Legend', pic: '../images/fall2.jpg'}, {name: 'Vault Girl', myDesc: 'Also a legend', pic: '../images/fall3.png'}];
 
 // the hardcoded JWT access token you created @ jwt.io.
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMDU0MTIiLCJuYW1lIjoiTWFyY3VzIFN0b3JmdXJzdGVuIEZpbm5iZXJnIiwiaWF0IjoxfQ.plr6It0vU75MeCOdrU4HcuWTOedDtoSPqOrkA8Ky_pg';
@@ -85,3 +85,4 @@ export class AuthInterceptor implements HttpInterceptor {
 
     // implement logic for handling API requests, as defined in the exercise instructions.
   }
+}
