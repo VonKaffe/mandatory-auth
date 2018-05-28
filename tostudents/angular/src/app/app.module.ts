@@ -6,14 +6,22 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { AuthInterceptor } from './auth-interceptor';
 import { AppComponent } from './app.component';
+import { FriendsComponent } from './friends/friends.component';
+import {Router, RouterModule, Routes} from '@angular/router';
+
+const appRoutes = [
+  {path:'', component: AppComponent},
+  {path:'friends', component: FriendsComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FriendsComponent
   ],
   imports: [
     BrowserModule,
-
+    RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule
   ],
